@@ -231,6 +231,29 @@ class Player(GameSprite):
             self.rect.x =randint(80,win_width - 80)
             self.rect.y = 0
             lost=lost + 1
+                        
+класс врага где описана его скорость и появление в разных местах
+
+
+class Bullet(GameSprite):
+    def update(self):
+        self.rect.y +=self.speed
+        if self.rect.y < 0:
+            self.kill()
+            
+класс пули где написано о том как она будет убивать врага
+
+
+#Игровая сцена:
+win_width = 700
+win_height = 500
+window = display.set_mode((win_width, win_height))
+display.set_caption("Maze")
+background = transform.scale(image.load("galaxy.jpg"), (win_width, win_height))
+
+
+
+
  
 
 
